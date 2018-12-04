@@ -3,10 +3,8 @@ node_js:
   - "node"
   - "7"
   - "6"
-  - "5"
-  - "4"
 before_script:
-  - npm install chai chaihttp mocha
+  - npm install chai chai-http mocha
   - npm install
-scrip:
+script: 
   - npm test
