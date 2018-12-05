@@ -4,9 +4,12 @@ const authController = require('../controllers/auth.controller')
 
 router.get('/games', gameController.getAll)
 router.get('/games/:gameId', gameController.getById)
-router.post('/games', gameController.addNewGame)
+router.post('/gamesr/', gameController.addNewGame)
+router.post('/games/insert/', gameController.insertNewGame)
+router.post('/games/update/:gameId', gameController.updatetNewGame)
 
 router.post('/register', authController.register)
+router.get('/users', authController.allUsers)
 router.post('/login', authController.login)
 
 
