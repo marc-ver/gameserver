@@ -16,16 +16,15 @@ module.exports = {
 	getAll(req, res, next) {
 		console.log('gameController.get called')
 
-		// FOr pool  initialization
-		pool.query("SELECT * FROM games", function(err, rows, fields) {
+		// For pool initialization, see above
+		pool.query("SELECT * FROM games", function (err, rows, fields) {
+			// Connection is automatically released when query resolves
 			if(err){
 				console.log(err)
-				return next(new ApiError(err,500))
+				return next(new ApiError(err, 500))
 			}
-			res.status(200).json({Result: rows}).end()
-		 })
-
-		
+			res.status(200).json({ result: rows }).end()
+		})
 	},
 
 	getById(req, res, next) {
